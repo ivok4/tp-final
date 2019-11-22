@@ -55,6 +55,30 @@ const styles = StyleSheet.create({
 
 
 const Home = (props) => {
+  
+
+  const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams`);  
+
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        const json = await response.json();
+        setData(json.sports)
+        setIsLoading(false)
+    } catch (error) {
+        console.log(error);
+    }
+}
+console.log(data)
+
     const { navigate } = props.navigation
     const {flexDirection, alignItems, justifyContent} = this.state
     const layoutStyle = {flexDirection, justifyContent, alignItems}
@@ -97,12 +121,13 @@ const Home = (props) => {
             </View>
             <View>
             <TouchableHighlight
-                    onPress={() => navigate('Objects')}
+                    onPress={() => navigate('draggable', { data })}
             >
+
                 <Image style={styles.icon} source={require('../../proyecto/assets/objects.png')} />
             </TouchableHighlight>
          </View>
-
+         
          </View>
     </ScrollView>
     )

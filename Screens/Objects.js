@@ -3,6 +3,8 @@ import { Image, Text, View, ScrollView, TouchableHighlight, StyleSheet, Button, 
 import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
+
+
 state = {
     flexDirection: 'row',
     justifyContent: 'center',

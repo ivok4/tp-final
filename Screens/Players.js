@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { Dimensions, Text, View, ScrollView, TouchableHighlight, StyleSheet, Button, Data} from 'react-native'
+import { Dimensions, Text, View, ScrollView, TouchableHighlight, StyleSheet, Button, CameraRoll} from 'react-native'
 import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -30,7 +30,18 @@ const styles = StyleSheet.create({
 
      },
 });
-
+_handleButtonPress = () => {
+  CameraRoll.getPhotos({
+      first: 20,
+      assetType: 'Photos',
+    })
+    .then(r => {
+      this.setState({ photos: r.edges });
+    })
+    .catch((err) => {
+       //Error Loading Images
+    });
+  };
 
 const Players = (props) => {
     const { navigate } = props.navigation
@@ -101,6 +112,7 @@ const Players = (props) => {
             }}
             underlayColor = '#ccc'
             onPress = { () => alert('Yaay!') }
+
     >
       <Text style={{color: 'white'}}> 4 </Text>
     </TouchableHighlight>
@@ -223,6 +235,7 @@ const Players = (props) => {
       <Text style={{color: 'white'}}> 12 </Text>
     </TouchableHighlight>
     </View>
+ 
         </View>               
     </ScrollView>
     )
