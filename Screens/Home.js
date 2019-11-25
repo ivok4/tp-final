@@ -65,13 +65,13 @@ const Home = (props) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams`);  
-
+        const response = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/teams?key=0138b6d456094a929e46d2a94aee14fe`);  
+        //const response = await fetch(`https://www.balldontlie.io/api/v1/teams`);
         if (!response.ok) {
             throw Error(response.statusText);
         }
         const json = await response.json();
-        setData(json.sports)
+        setData(json)
         setIsLoading(false)
     } catch (error) {
         console.log(error);
