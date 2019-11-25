@@ -4,11 +4,7 @@ import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
 
-state = {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+
 const styles = StyleSheet.create({
 	container: {
         backgroundColor: '#2C313C',       
@@ -66,7 +62,6 @@ const Home = (props) => {
     const fetchData = async () => {
       try {
         const response = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/teams?key=0138b6d456094a929e46d2a94aee14fe`);  
-        //const response = await fetch(`https://www.balldontlie.io/api/v1/teams`);
         if (!response.ok) {
             throw Error(response.statusText);
         }
@@ -77,7 +72,6 @@ const Home = (props) => {
         console.log(error);
     }
 }
-console.log(data)
 
     const { navigate } = props.navigation
     const {flexDirection, alignItems, justifyContent} = this.state
@@ -87,11 +81,7 @@ console.log(data)
     return (
         
     <ScrollView  style={styles.container}>
-      <TouchableHighlight
-                    onPress={() => navigate('')}
-            >
-        <Ionicons style={[styles.menu]} name="md-menu" size={32} color="white" />
-        </TouchableHighlight>
+      
       <View style={[styles.logo]}>
              <Text style={styles.letras}>BASKETBALL</Text>
             <Text style={styles.letrasBold}>LIBRO DE JUGADAS</Text>

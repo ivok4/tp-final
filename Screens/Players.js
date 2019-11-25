@@ -30,19 +30,6 @@ const styles = StyleSheet.create({
 
      },
 });
-_handleButtonPress = () => {
-  CameraRoll.getPhotos({
-      first: 20,
-      assetType: 'Photos',
-    })
-    .then(r => {
-      this.setState({ photos: r.edges });
-    })
-    .catch((err) => {
-       //Error Loading Images
-    });
-  };
-
 const Players = (props) => {
     const { navigate } = props.navigation
     const {flexDirection, alignItems, justifyContent} = this.state

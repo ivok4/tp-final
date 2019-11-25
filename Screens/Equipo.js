@@ -12,28 +12,25 @@ const Equipo = (props) => {
     container: { 
       backgroundColor:'#2C313C',
       flex: 1,
-      width: 380,
+      flexDirection: 'row',
   },
       
     card: {
-    width:150,
-    height:300,
+      width:150,
+      height:300,
       backgroundColor: '#'+props.item.PrimaryColor,
       marginLeft:20,
-    },
+      marginBottom:20,
+
+
+          },
     titulo:{
       color: 'white',
       fontSize:35,
       textAlign:'center',
   },
-  tituloPrincipal:{
-    color: 'white',
-    fontSize:40,
-    textAlign:'center',
-},
   });
 
-console.log('#'+props.item.PrimaryColor)
 
     return(        
       <View  style={styles.card}>

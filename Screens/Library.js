@@ -10,20 +10,43 @@ import {DraggableCore} from 'react-draggable';
 
 const styles = StyleSheet.create({
 container: { 
-    backgroundColor:'#2C313C',
-    flex: 1,
-    flexDirection:'row',
+  backgroundColor: '#2C313C',
+  flex: 1,
+  width: "100%",
+  height: '100%',
+  flexDirection: 'row',
 },
   viewStyleOne: {
-    width:40,
+    width:10,
     height:40,
     justifyContent: 'center',
     alignItems:'center', 
-    backgroundColor:'#b642f4'
+    backgroundColor:'#b642f4',
+  },
+  viewStyleTwo: {
+    width:200,
+    height:40,
+    justifyContent: 'center',
+    alignItems:'center', 
+    backgroundColor:'red',
+  },
+  viewStyleThree: {
+    width:300,
+    height:40,
+    justifyContent: 'center',
+    alignItems:'center', 
+    backgroundColor:'blue',
   },
   textStyle:{
     textAlign:'center'
-  }
+  },
+  tituloPrincipal:{
+    color: 'white',
+    fontSize:40,
+    textAlign:'center',
+    flexDirection: 'column',
+    marginBottom:20,
+},
 });
 
 
@@ -34,6 +57,9 @@ const Players = (props) => {
 
     return (
         <View style={styles.container}>
+          <View>
+                    <Text style={styles.tituloPrincipal}>Equipos</Text>
+                </View>
         <View style={styles.viewStyleOne}>
           <Text style={styles.textStyle}> 1 </Text>
         </View>
