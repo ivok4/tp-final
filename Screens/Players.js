@@ -1,7 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import { Dimensions, Text, View, ScrollView, TouchableHighlight, StyleSheet, Button, CameraRoll} from 'react-native'
 import { withNavigation } from 'react-navigation';
-import { Ionicons } from '@expo/vector-icons';
+
+
 
 state = {
     flexDirection: 'row',
@@ -24,25 +25,41 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-end',
       alignItems: 'flex-start',
       color: 'white',
-      marginLeft:300,
       marginBottom: 50,
       fontSize:25,
-
+      
+     },
+     contenedor:{
+      width:100,
      },
 });
+
 const Players = (props) => {
     const { navigate } = props.navigation
     const {flexDirection, alignItems, justifyContent} = this.state
     const layoutStyle = {flexDirection, justifyContent, alignItems}
 
+
+    
+
+    
     return (
     <ScrollView  style={[styles.container]}>
         <View style={[styles.logo]}>
-        <TouchableHighlight
-                    onPress={() => navigate('')}
+        <TouchableHighlight 
+        style = {{
+            width:100,
+            height:90,
+            color:'#FFFFFF',
+            marginLeft: 300,
+
+        }}
+                    onPress={() => alert('Proximamente') }
+                    
             >
             <Text style={[styles.edit]} >Editar</Text>
             </TouchableHighlight>
+
             <View style={[styles.group]}>
             <TouchableHighlight
                         style = {{
@@ -54,8 +71,9 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
-    >
+            onPress = { () => alert('Proximamente!') }
+                >
+       
       <Text style={{color: 'white'}}> 1 </Text>
     </TouchableHighlight>
     <TouchableHighlight
@@ -68,7 +86,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 2 </Text>
     </TouchableHighlight>
@@ -82,7 +100,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 3 </Text>
     </TouchableHighlight>
@@ -98,7 +116,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
 
     >
       <Text style={{color: 'white'}}> 4 </Text>
@@ -113,7 +131,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 5 </Text>
     </TouchableHighlight>
@@ -127,7 +145,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 6 </Text>
     </TouchableHighlight>
@@ -144,7 +162,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 7 </Text>
     </TouchableHighlight>
@@ -158,7 +176,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 8 </Text>
     </TouchableHighlight>
@@ -172,7 +190,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 9 </Text>
     </TouchableHighlight>
@@ -189,7 +207,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 10 </Text>
     </TouchableHighlight>
@@ -203,7 +221,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 11 </Text>
     </TouchableHighlight>
@@ -217,7 +235,7 @@ const Players = (props) => {
                 alignItems: 'center'
             }}
             underlayColor = '#ccc'
-            onPress = { () => alert('Yaay!') }
+            onPress = { () => alert('Proximamente!') }
     >
       <Text style={{color: 'white'}}> 12 </Text>
     </TouchableHighlight>
